@@ -188,3 +188,6 @@ sudo dpkg -i deb/python-owslib/python-owslib_0.14.0-1_all.deb
 sudo dpkg -i deb/python-gdal/python-numpy_1.12.1-3_amd64.deb
 sudo dpkg -i deb/python-gdal/python-gdal_2.1.2+dfsg-5_amd64.deb
 
+### python-apt
+sudo dpkg -i deb/python-apt/python-apt-common_1.4.1_all.deb
+sudo dpkg -i deb/python-apt/python-apt_1.4.1_amd64.deb
