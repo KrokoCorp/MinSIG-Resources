@@ -98,8 +98,14 @@ sudo dpkg -i deb/python-mapscript/libarpack2_3.4.0-1+b1_amd64.deb
 sudo dpkg -i deb/python-mapscript/libsuperlu5_5.2.1+dfsg1-2_amd64.deb
 sudo dpkg -i deb/python-mapscript/libarmadillo7_7.600.2+dfsg-2_amd64.deb
 sudo dpkg -i deb/python-mapscript/libpixman-1-0_0.34.0-1_amd64.deb
+sudo dpkg -i deb/python-mapscript/libxau6_1.0.8-1_amd64.deb
+sudo dpkg -i deb/python-mapscript/libxdmcp6_1.1.2-3_amd64.deb
+sudo dpkg -i deb/python-mapscript/libxcb1_1.12-1_amd64.deb
 sudo dpkg -i deb/python-mapscript/libxcb-render0_1.12-1_amd64.deb
 sudo dpkg -i deb/python-mapscript/libxcb-shm0_1.12-1_amd64.deb
+sudo dpkg -i deb/python-mapscript/libx11-data_1.6.4-3+deb9u1_all.deb
+sudo dpkg -i deb/python-mapscript/libx11-6_1.6.4-3+deb9u1_amd64.deb
+sudo dpkg -i deb/python-mapscript/libxext6_1.3.3-1+b2_amd64.deb
 sudo dpkg -i deb/python-mapscript/libxrender1_0.9.10-1_amd64.deb
 sudo dpkg -i deb/python-mapscript/libcairo2_1.14.8-1_amd64.deb
 sudo dpkg -i deb/python-mapscript/libcroco3_0.6.11-3_amd64.deb
@@ -191,3 +197,4 @@ sudo dpkg -i deb/python-gdal/python-gdal_2.1.2+dfsg-5_amd64.deb
 ### python-apt
 sudo dpkg -i deb/python-apt/python-apt-common_1.4.1_all.deb
 sudo dpkg -i deb/python-apt/python-apt_1.4.1_amd64.deb
+
