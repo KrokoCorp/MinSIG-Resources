@@ -1,0 +1,52 @@
+IMPORT_PBF_FILE=ile-de-france-latest.osm.pbf;
+BORDERS_PBF_FILE=temp.pbf;
+BORDERS_CSV_FILE=border.csv;
+/home/minsig/tilestache_dark/osmborder/osmborder_filter -o "$BORDERS_PBF_FILE" "$IMPORT_PBF_FILE" && /home/minsig/tilestache_dark/osmborder/osmborder -o "$BORDERS_CSV_FILE" "$BORDERS_PBF_FILE" && rm "$BORDERS_PBF_FILE" 
+
+
+./imposm import -mapping ../mapping.yml -read /home/minsig/tilestache_dark/geofabrik/ile-de-france-latest.osm.pbf -cachedir .  -write  -connection='postgis: dbname=gis host=/var/run/postgresql' -optimize -deployproduction
+
+psql -d gis -v ON_ERROR_STOP="1" -c '\timing on' -f full.sql
+psql -d gis -f /home/minsig/tilestache_dark/sql/sqltomvt.sql
+
+sudo apt-get install fonts-noto-cjk fonts-noto-hinted fonts-noto-unhinted fonts-hanazono ttf-unifont
+
+sudo -u postgres -i
+psql -d gis
+ALTER USER minsig WITH SUPERUSER;
+
+ALTER USER minsig WITH NOSUPERUSER;
+
+sudo -u postgres -i
+psql -d gis
+ALTER USER minsig WITH SUPERUSER;
+
+./imposm import -mapping ../super_mapping.yml -read /home/minsig/tilestache_dark/geofabrik/ile-de-france-latest.osm.pbf -cachedir . -overwritecache -write  -connection='postgis: dbname=gis host=/var/run/postgresql' -optimize -deployproduction
+
+https://tableplus.com/blog/2018/04/postgresql-how-to-grant-access-to-users.html
+
+curl 127.0.0.1:18000/bright/15/16592/11274.png --output ./11274.png
+
+curl 127.0.0.1:18000/osm/10/520/353.png --output ./353o.png
+
+curl 127.0.0.1:18000/bright/10/520/353.png --output ./353b.png
+
+curl 127.0.0.1:18000/dark/10/520/353.png --output ./353.png
+
+curl 127.0.0.1:18000/osm/12/2073/1408.png --output ./1408o.png
+
+curl 127.0.0.1:18000/bright/12/2073/1408.png --output ./1408.png
+
+curl 127.0.0.1:18000/wheastPaste/12/2073/1408.png --output ./1408w.png
+
+curl 127.0.0.1:18000/dark/12/2073/1408.png --output ./1408d.png
+
+curl 127.0.0.1:18000/pencil/12/2073/1408.png --output ./1408p.png
+
+curl 127.0.0.1:18000/woodcut/12/2073/1408.png --output ./1408wo.png
+
+curl 127.0.0.1:18000/light/12/2073/1408.png --output ./1408li.png
+
+RuntimeError: Postgis Plugin: ERREUR:  droit refusé pour la relation water_z0
+mai 14 19:00:18 VMTEST tilestache-server.py[29877]: in executeQuery Full sql was: 'SELECT * FROM (SELECT geometry, class, intermittent, brunnel FROM layer_water(ST_SetSRID('BOX3D(-3.402823466385289e+38 -3.402823466385289e+38,3.402823466385289e+38 3.402823466385289e+38)'::box3d, 900913), z(3.40282e+38))) AS t LIMIT 0'
+mai 14 19:00:18 VMTEST tilestache-server.py[29877]:   encountered during parsing of layer 'water' in Layer at line 58 of '/opt/minsig/package/tilestache/style/osmBrightMapnik/project.xml
