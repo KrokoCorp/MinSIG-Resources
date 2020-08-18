@@ -1,0 +1,4 @@
+geoserver.war.zip filter=lfs diff=lfs merge=lfs -text
+grafana_6.7.3_amd64.deb filter=lfs diff=lfs merge=lfs -text
+Python-3.7.4.tar.gz filter=lfs diff=lfs merge=lfs -text
+python/Python-MinSIG/deb/python-pip.tar.gz filter=lfs diff=lfs merge=lfs -text
